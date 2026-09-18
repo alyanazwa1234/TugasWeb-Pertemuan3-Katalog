@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>piandresleep - Piyama & Dress Tidur Premium</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Google untuk kesan Aesthetic (Playfair Display & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pastel-cream': '#FAF6F0',
+            'pastel-card': '#FFFBF7',
+            'pastel-pink': '#F4E0E5',
+            'pastel-pink-dark': '#E8B4B8',
+            'pastel-text': '#5A4A42',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Requirement: clamp() untuk responsive typography */
+    .hero-title {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+    }
+    .brand-title {
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+    }
+  </style>
+</head>
+<body class="bg-pastel-cream text-pastel-text font-sans min-h-screen flex flex-col justify-between">
+
+  <!-- NAVBAR -->
+  <header class="bg-white/70 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Merek disebelah kiri (Aesthetic & Bold) -->
+      <span class="brand-title font-serif font-bold tracking-wide text-pastel-text">
+        piandresleep
+      </span>
+
+      <!-- Menu Navigasi Formalitas (Sisi Kanan Desktop) -->
+      <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-600">
+        <span class="cursor-default hover:text-gray-800">Beranda</span>
+        <!-- Garis bawah di kata Katalog -->
+        <span class="cursor-default text-pastel-pink-dark font-semibold border-b-2 border-pastel-pink-dark pb-1">Katalog</span>
+        <span class="cursor-default hover:text-gray-800">Tentang Kami</span>
+        <span class="cursor-default hover:text-gray-800">Kontak</span>
+      </nav>
+
+      <!-- Hamburger Menu untuk Mobile View -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="text-pastel-text focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4 space-y-3 text-sm">
+      <span class="block cursor-default text-gray-600">Beranda</span>
+      <span class="block cursor-default font-semibold text-pastel-pink-dark underline">Katalog</span>
+      <span class="block cursor-default text-gray-600">Tentang Kami</span>
+      <span class="block cursor-default text-gray-600">Kontak</span>
+    </div>
+  </header>
+
+  <!-- HERO / HEADER JUDUL -->
+  <section class="text-center pt-10 pb-6 px-4">
+    <!-- Judul Aesthetic, Bold, Lebih Besar dari Merek -->
+    <h1 class="hero-title font-serif font-bold text-pastel-text tracking-wide mb-2">
+      piyama&dress premium
+    </h1>
+    <!-- Penjelasan Aesthetic, Lebih Kecil, Tidak Bold -->
+    <p class="text-sm md:text-base font-light italic text-gray-600 max-w-xl mx-auto">
+      segera coba produk kami yg premium dengan bahan yang adem dan lembut
+    </p>
+  </section>
+
+  <!-- KATALOG PRODUK (Grid 3x3 Responsif) -->
+  <main class="max-w-6xl mx-auto px-6 pb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- ================= BARIS 1 (Harga: Rp 150.000 | Jenis: premium long piyama | Ukuran: l-xl) ================= -->
+      <!-- Produk 1 (DIPERKECIL / SCALE-90) -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk1.jpeg" alt="pink cotton ribbon" class="w-full h-full object-contain scale-90 transition-transform duration-300">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">premium long piyama</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">pink cotton ribbon</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 150.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- Produk 2 -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk2.jpeg" alt="soft brown rayon" class="w-full h-full object-cover object-center">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">premium long piyama</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">soft brown rayon</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 150.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- Produk 3 (DIPERKECIL / SCALE-90) -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk3.jpeg" alt="floral linen pajamas" class="w-full h-full object-contain scale-90 transition-transform duration-300">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">premium long piyama</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">floral linen pajamas</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 150.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- ================= BARIS 2 (Harga: Rp 135.000 | Jenis: piyama short | Ukuran: l-xl) ================= -->
+      <!-- Produk 4 -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk4.jpeg" alt="creach cotton pajamas" class="w-full h-full object-cover object-center">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">piyama short</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">creach cotton pajamas</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 135.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- Produk 5 (DIPERKECIL / SCALE-90) -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk5.jpeg" alt="soft pink silk shorties" class="w-full h-full object-contain scale-90 transition-transform duration-300">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">piyama short</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">soft pink silk shorties</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 135.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- Produk 6 (DIPERKECIL / SCALE-90) -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk6.jpeg" alt="floral bloom silk sleepwear" class="w-full h-full object-contain scale-90 transition-transform duration-300">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">piyama short</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">floral bloom silk sleepwear</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 135.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- ================= BARIS 3 (Harga: Rp 120.000 | Jenis: dress sleep | Ukuran: l-xl) ================= -->
+      <!-- Produk 7 -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk7.jpeg" alt="honey tea cream sleep dress" class="w-full h-full object-cover object-center">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">dress sleep</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">honey tea cream sleep dress</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 120.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- Produk 8 (DIPERKECIL / SCALE-90) -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk8.jpeg" alt="red ribbon bunny sleepwear" class="w-full h-full object-contain scale-90 transition-transform duration-300">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">dress sleep</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">red ribbon bunny sleepwear</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 120.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+      <!-- Produk 9 (DIPERKECIL / SCALE-90 & REVISI NAMA) -->
+      <div class="bg-pastel-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow border border-pastel-pink/30 flex flex-col justify-between">
+        <div>
+          <div class="w-full h-72 bg-white rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+            <img src="images/produk9.jpeg" alt="purple cutie sleep dress" class="w-full h-full object-contain scale-90 transition-transform duration-300">
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-pastel-pink-dark">dress sleep</span>
+          <h3 class="font-serif font-semibold text-lg text-pastel-text mt-1">purple cutie sleep dress</h3>
+          <p class="text-xs text-gray-500 mt-1">ukuran: l-xl</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+          <span class="font-bold text-pastel-text text-base">Rp 120.000</span>
+          <button class="bg-pastel-pink hover:bg-pastel-pink-dark text-pastel-text text-xs px-3 py-1.5 rounded-lg transition-colors">Beli</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- SEKSI INFO PEMESANAN (FORM EMAIL & PESANAN) -->
+  <section class="max-w-3xl mx-auto px-6 mb-16 w-full">
+    <div class="bg-white/80 rounded-2xl p-6 md:p-8 shadow-sm border border-pastel-pink/50">
+      <h2 class="font-serif font-bold text-xl md:text-2xl text-pastel-text text-center mb-2">Info Pemesanan</h2>
+      <p class="text-xs md:text-sm text-gray-500 text-center mb-6">Isi formulir di bawah ini untuk melakukan pemesanan produk piandresleep pilihanmu.</p>
+      
+      <form class="space-y-4" onsubmit="event.preventDefault();">
+        <!-- Kotak Email -->
+        <div>
+          <label class="block text-xs font-medium text-pastel-text mb-1">Alamat Email</label>
+          <input type="email" placeholder="contoh: emailkamu@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-pastel-pink-dark bg-pastel-cream/30" required>
+        </div>
+
+        <!-- Kotak Pesanan -->
+        <div>
+          <label class="block text-xs font-medium text-pastel-text mb-1">Detail Pesanan</label>
+          <textarea rows="4" placeholder="Tuliskan nama produk, jumlah, dan ukuran yang diinginkan (contoh: pink cotton ribbon - 1 pcs)" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-pastel-pink-dark bg-pastel-cream/30" required></textarea>
+        </div>
+
+        <!-- Tombol Kirim -->
+        <button type="submit" class="w-full bg-pastel-pink-dark hover:bg-pastel-pink text-white font-medium py-3 rounded-xl transition-colors shadow-sm text-sm">
+          Kirim Pesanan
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white/80 border-t border-pastel-pink/40 py-6 text-center text-xs text-gray-500">
+    <p>&copy; 2026 <span class="font-serif font-semibold text-pastel-text">piandresleep</span>. Tugas Rutin 3 - Pemrograman Web.</p>
+  </footer>
+
+  <!-- Script Hamburger Menu Mobile -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
